@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="color_primary">#B4F35404</color>
+    <color name="color_primary2">@color/color_primary</color>
+    <color name="color_primary_variant">#B4F35404</color>
+    <color name="color_on_secondary">#FFEDEDED</color>
+    <color name="teal_200">@color/white</color>
+    <color name="teal_700">@color/white</color>
+    <color name="color_on_primary">#FFDDDDDD</color>
+    <color name="white">#FF000000</color>
+    <color name="all_bg">#171717</color>
+    <color name="item_title">@color/white</color>
+    <color name="item_text">@color/white</color>
+    <color name="line">#EEEEEE</color>
+    <color name="load">#2EAD4D</color>
+    <color name="grey">#dddddd</color>
+    <color name="translucent">#90000000</color>
+    <color name="about_bg">#FF111111</color>
+    <color name="grey_white">#F8F8F8</color>
+    <color name="dark_grey">#FF313131</color>
+    <color name="text_icon_color">#FFFFFFFF</color>
+    <color name="loading_tint">#FFFF5500</color>
+    <color name="ele_tint">#FFEEEEEE</color>
+    <color name="ele_tint_secondary">#FFEDEDED</color>
+    <color name="note_bg">@color/dark_grey</color>
+    <color name="color_track">#FFFF5500</color>
+    <color name="color_switch_track">#474747</color>
+</resources>

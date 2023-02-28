@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="isNightMode"
+            type="Boolean" />
+
+        <variable
+            name="isFollowSystem"
+            type="Boolean" />
+
+        <import type="android.view.View"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/white"
+        tools:context=".ui.activity.SettingActivity">
+
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:background="@color/color_primary2"
+            android:layout_height="?attr/actionBarSize"
+            app:navigationIcon="@drawable/ic_back_white">
+
+            <TextView
+                android:id="@+id/title"
+                android:text="应用设置"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/mb_confirm"
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:text="完成"
+                android:textSize="14sp"
+                android:layout_marginEnd="5dp"
+                android:textColor="@android:color/white"
+                android:layout_gravity="end"/>
+
+        </com.google.android.material.appbar.MaterialToolbar>
+
+        <LinearLayout
+            android:id="@+id/ll_blog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="5dp"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:background="@color/note_bg"
+            android:gravity="center_vertical"
+            android:paddingVertical="14dp"
+            android:paddingHorizontal="12dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="跟随系统"
+                android:textSize="16sp"
+                android:textColor="@color/text_icon_color" />
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/switchMode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:checked="@{isFollowSystem ? true : false}"
+                android:thumb="@drawable/switch_mode_thumb"
+                app:track="@drawable/switch_track_selector" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lay_mode_choose"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="@{isFollowSystem ? View.GONE : View.VISIBLE}"
+            android:layout_marginTop="15dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/ele_tint"
+                android:layout_marginStart="5dp"
+                android:text="手动选择"/>
+
+            <LinearLayout
+                android:id="@+id/ll_normal_mode"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:orientation="horizontal"
+                android:layout_marginTop="5dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:background="@color/note_bg"
+                android:gravity="center_vertical"
+                android:padding="12dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="普通模式"
+                    android:textSize="16sp"
+                    android:textColor="@color/text_icon_color" />
+
+                <ImageView
+                    android:id="@+id/check_normal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_check"
+                    android:scaleX="0.6"
+                    android:scaleY="0.6"
+                    android:visibility="@{isNightMode ? View.GONE : View.VISIBLE}"/>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"/>
+
+            <LinearLayout
+                android:id="@+id/ll_night_mode"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:clickable="true"
+                android:orientation="horizontal"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:background="@color/note_bg"
+                android:gravity="center_vertical"
+                android:padding="12dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="深色模式"
+                    android:textSize="16sp"
+                    android:textColor="@color/text_icon_color" />
+
+                <ImageView
+                    android:id="@+id/check_night"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_check"
+                    android:scaleX="0.6"
+                    android:scaleY="0.6"
+                    android:visibility="@{isNightMode ? View.VISIBLE : View.GONE}"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+</layout>

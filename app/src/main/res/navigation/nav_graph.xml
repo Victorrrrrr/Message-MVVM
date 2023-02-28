@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/info_fragment">
+
+    <!--  资讯  -->
+    <fragment
+        android:id="@+id/info_fragment"
+        android:name="com.example.mvvm_study.ui.fragment.InfoFragment"
+        android:label="info_fragment"
+        tools:layout="@layout/fragment_info"/>
+
+    <!--  地图  -->
+    <fragment
+        android:id="@+id/map_fragment"
+        android:name="com.example.mvvm_study.ui.fragment.MapFragment"
+        android:label="map_fragment"
+        tools:layout="@layout/fragment_map"/>
+
+</navigation>

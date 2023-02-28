@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="color_primary">#FFFF5500</color>
+    <color name="color_primary2">@color/color_primary</color>
+    <color name="color_primary_variant">#FFFF5500</color>
+    <color name="color_on_secondary">#FF222222</color>
+    <color name="teal_200">@color/white</color>
+    <color name="teal_700">@color/white</color>
+    <color name="color_on_primary">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="all_bg">@color/white</color>
+    <color name="item_title">@android:color/black</color>
+    <color name="item_text">#CDCDCD</color>
+    <color name="line">#212121</color>
+    <color name="load">#2EAD4D</color>
+    <color name="grey">#dddddd</color>
+    <color name="translucent">#90000000</color>
+    <color name="about_bg">#F8F8FA</color>
+    <color name="grey_white">#F8F8F8</color>
+    <color name="dark_grey">#838383</color>
+    <color name="text_icon_color">#000000</color>
+    <color name="loading_tint">#FFFF5500</color>
+    <color name="ele_tint">#FF212121</color>
+    <color name="ele_tint_secondary">#FF838383</color>
+    <color name="note_bg">@color/grey_white</color>
+    <color name="color_track">@color/grey_white</color>
+    <color name="color_switch_track">#E3E3E3</color>
+</resources>

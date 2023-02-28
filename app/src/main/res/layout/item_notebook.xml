@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="notebook"
+            type="com.example.mvvm_study.db.bean.Notebook" />
+
+        <!--是否批量删除-->
+        <variable
+            name="isBatchDeletion"
+            type="Boolean" />
+
+        <!--是否全选-->
+        <variable
+            name="isAllSelected"
+            type="Boolean" />
+
+        <import type="android.view.View"/>
+        <import type="androidx.core.content.ContextCompat"/>
+        <import type="com.example.mvvm_study.R"/>
+
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:foreground="?attr/selectableItemBackground"
+        android:layout_margin="4dp"
+        android:background="@drawable/shape_bg_white_radius_12"
+        android:padding="12dp">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text="@{notebook.title}"
+            android:textColor="@color/ele_tint"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:id="@+id/tv_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_title"
+            android:layout_marginTop="4dp"
+            android:ellipsize="end"
+            android:maxLines="3"
+            android:textColor="@color/ele_tint_secondary"
+            android:text="@{notebook.content}"
+            android:textSize="14sp"/>
+        
+        <ImageView
+            android:id="@+id/iv_check"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="6dp"
+            android:src="@{notebook.select ? @drawable/ic_selected : @drawable/ic_select}"
+            android:visibility="@{isBatchDeletion ? View.VISIBLE : View.GONE}"/>
+
+    </RelativeLayout>
+</layout>

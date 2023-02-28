@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="homeViewModel"
+            type="com.example.mvvm_study.viewmodels.HomeViewModel" />
+    </data>
+
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <!--主页面布局-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/all_bg"
+            tools:context=".ui.activity.HomeActivity">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@color/color_primary2">
+
+                <com.example.mvvm_study.view.CustomImageView
+                    android:id="@+id/iv_avatar"
+                    android:layout_width="36dp"
+                    localUrl="@{homeViewModel.user.avatar}"
+                    android:layout_height="36dp"
+                    android:padding="0.5dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/header"
+                    app:shapeAppearanceOverlay="@style/circleImageStyle"
+                    app:strokeWidth="1dp"
+                    app:strokeColor="@color/ele_tint"/>
+
+                <TextView
+                    android:id="@+id/tv_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="热门资讯"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold"/>
+            </com.google.android.material.appbar.MaterialToolbar>
+            <!--NavHost-->
+            <!--几个页面-->
+            <fragment
+                android:id="@+id/nav_host_fragment"
+                android:name="androidx.navigation.fragment.NavHostFragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@+id/bottom_navigation"
+                android:layout_below="@id/toolbar"
+                app:navGraph="@navigation/nav_graph"/>
+
+            <!-- 底部导航栏 -->
+            <com.google.android.material.bottomnavigation.BottomNavigationView
+                android:id="@+id/bottom_navigation"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:layout_alignParentBottom="true"
+                android:background="@color/all_bg"
+                app:itemIconTint="@color/bnv_color_selector"
+                app:itemTextColor="@color/bnv_color_selector"
+                app:menu="@menu/navigation_menu"/>
+
+        </RelativeLayout>
+
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/nav_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            app:headerLayout="@layout/nav_header"
+            app:itemIconSize="24dp"
+            app:itemIconTint="@color/text_icon_color"
+            app:itemTextColor="@color/text_icon_color"
+            app:menu="@menu/nav_menu"
+            app:drawerLayoutCornerSize="24dp" />
+        <!--android:layout_marginEnd="-65dp"
+        全屏显示侧滑菜单：因为菜单默认和右边留下的距离最大不超过65dp，
+        所以只需要把侧边距设置为-65，即可全屏显示-->
+
+    </androidx.drawerlayout.widget.DrawerLayout>
+
+
+
+
+</layout>
