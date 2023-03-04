@@ -63,7 +63,7 @@ public class MainActivity extends BaseActivity {
                     scrollRange = appBarLayout.getTotalScrollRange();
                 }
                 if(scrollRange + verticalOffset == 0) { //收缩时
-                    dataBinding.toolbarLayout.setTitle("MVVM-Study");
+                    dataBinding.toolbarLayout.setTitle("每日壁纸");
                     isShow = true;
                 } else if(isShow) { //展开时
                     dataBinding.toolbarLayout.setTitle("");
